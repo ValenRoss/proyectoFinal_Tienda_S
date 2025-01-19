@@ -1,0 +1,9 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box; }
+
+#productos{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(500px,1fr))
+    }
