@@ -1,7 +1,7 @@
 const Api = "https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15"
 
 const Productos = document.getElementById("productos")
-                        
+
 function pintadoraDeCards({internalName, salePrice, dealRating, thumb}){
     const contenedor = document.createElement("div")
 
@@ -18,8 +18,6 @@ function pintadoraDeCards({internalName, salePrice, dealRating, thumb}){
     contenedor.append(titulo, precio, Puntuacion, img)
 
     Productos.appendChild(contenedor)
- 
-
 }
 
 document.addEventListener("DOMContentLoaded", async ()=>{
@@ -31,4 +29,5 @@ document.addEventListener("DOMContentLoaded", async ()=>{
         pintadoraDeCards(element)
         
     });
+
 })
