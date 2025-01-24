@@ -7,8 +7,25 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div id="productos"></div>
-    <div id="carrito"></div>
+    <header>
+        <div id="carritoIcon">
+            <span></span>
+            <img src="https://static.vecteezy.com/system/resources/previews/016/314/413/non_2x/shopping-cart-free-png.png" alt="">          
+        </div>
+        <div id="carrito-contenedor" class="carrito">
+            <div class="titulo">
+            </div>
+            <div id="total">$0</div>
+        </div>
+    </header>
+    <main>
+        <div id="productos"></div>
+        <div id="carrito">
+            <p>Tus productos</p>
+            <p>Precio</p>
+        </div>
+    </main>
     <script src="./main/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
