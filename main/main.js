@@ -13,12 +13,11 @@ const carrito = []
 const Productos = document.getElementById("productos")
 
 function actualizarCarrito(){
-    carritoDom.innerText = ""
     carrito.forEach(el => {
         const {nombre, imagen, precio} = el
 
         const contenedor = document.createElement("div")
-        contenedor.classList.add("producto-Carrito")
+        contenedor.classList.add("carrito")
 
         const titulo = document.createElement("h2")
         const precioDom = document.createElement("p")
@@ -26,10 +25,7 @@ function actualizarCarrito(){
 
         titulo.innerText = nombre
         img.src = imagen
-        precio.innerText = precioDom
-
-        info.append(titulo, img, precioDom)
-
+    
         carritoDom.appendChild(contenedor)
     })
 }   
@@ -55,8 +51,7 @@ function creadoraDeCards({internalName, salePrice, dealRating, thumb}){
     Productos.appendChild(contenedor)
     boton.addEventListener("click", () =>{
         let index = carrito.findIndex(el => el.internalName == internalName)
-        
-        actualizarCarrito()
+
         carrito.push({
             internalName,
             salePrice,
@@ -73,13 +68,8 @@ function creadoraDeCards({internalName, salePrice, dealRating, thumb}){
         })  
 
     })
-    actualizarCarrito()
-
-
     }    
     
-
-
 
 document.addEventListener("DOMContentLoaded", async ()=>{
     const response = await fetch(Api)
