@@ -1,7 +1,10 @@
 
 document.getElementById("carritoIcon").addEventListener("click", ()=>{
     document.getElementById("carrito").classList.toggle("active")
+    document.getElementById("carrito-contenedor").classList.toggle("on")
 })
+
+
 
 let Carrito = JSON.parse(localStorage.getItem("carrito")) || []
 
@@ -13,21 +16,27 @@ const carrito = []
 const Productos = document.getElementById("productos")
 
 function actualizarCarrito(){
-    carrito.forEach(el => {
-        const {nombre, imagen, precio} = el
+    carritoDom.innerHTML = ""
 
+    localStorage.setItem("carrito", JSON.stringify(Carrito))
+
+    carrito.forEach(el => {
+        const {internalName, salePrice, thumb} = el
         const contenedor = document.createElement("div")
-        contenedor.classList.add("carrito")
+        contenedor.classList.add("card-carrito")
 
         const titulo = document.createElement("h2")
         const precioDom = document.createElement("p")
         const img = document.createElement("img")
 
-        titulo.innerText = nombre
-        img.src = imagen
-    
+        titulo.innerText = internalName
+        precioDom.innerText = "U$" + salePrice
+        img.src = thumb
+        
         carritoDom.appendChild(contenedor)
-    })
+
+        })
+
 }   
 
 function creadoraDeCards({internalName, salePrice, dealRating, thumb}){ 

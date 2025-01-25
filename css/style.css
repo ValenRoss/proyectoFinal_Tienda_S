@@ -90,3 +90,41 @@ button{
     width: 100px;
     height: 30px;
 }
+
+.card-carrito{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #555;
+    gap: 10px;
+}
+
+.card-carrito .info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.card-carrito .cantidad{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.card-carrito img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.on{
+    transform: translateX(0);
+}
+
+.logo{
+    margin: 0 auto;
+}
+
